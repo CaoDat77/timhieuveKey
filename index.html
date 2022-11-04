@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <ol>
+        <li>
+          <h2>Key</h2>
+          <p class="key">
+            Key là một thuộc tính giúp React xác định item nào được thêm mới,
+            thay đổi hay gỡ bỏ khi chúng ta render nhiều items cùng 1 lúc. Giá
+            trị key nên là duy nhất để phân biệt 1 item với các item khác,
+            thường chúng ta nên lấy id của data truyền vào mỗi item. hoặc để đơn
+            giản, ta có thể lấy luôn item index để làm key.
+          </p>
+        </li>
+        <li>
+          <h2>State</h2>
+          <ul>
+            <li>
+              <p class="state">
+                State giống như một kho lưu trữ dữ liệu cho các component trong
+                ReactJS. Nó chủ yếu được sử dụng để cập nhật component khi người
+                dùng thực hiện một số hành động như nhấp vào nút, nhập một số
+                văn bản, nhấn một số phím, v.v.
+              </p>
+            </li>
+            <li>
+              <p class="state">
+                React.Component là lớp cơ sở cho tất cả các lớp component cơ bản
+                khác trong ReactJS. Bất cứ khi nào một lớp kế thừa lớp
+                React.Component, hàm tạo (Constructor) của nó sẽ tự động gán
+                thuộc tính state cho lớp với giá trị ban đầu được gán bằng null.
+                Chúng ta có thể thay đổi nó bằng cách ghi đè hàm tạo
+                (Constructor).
+              </p>
+            </li>
+            <li>
+              <p class="state">
+                Trong nhiều trường hợp chúng ta cần cập nhật state. Để làm điều
+                đó, chúng ta phải sử dụng phương thức setState và chúng ta không
+                thể gán trực tiếp như thế này this.state = {'key': 'value'}.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2>Hook</h2>
+            <ul>
+              <li>
+                <p class="hook">Hook là gì? Hook là một hàm đặc biệt cho phép bạn sử dụng các tính năng của React (mà không cần phải tạo class). Ví dụ, useState là một hook cho phép bạn thêm React state vào function components.</p>
+              </li>
+              <li>
+                <p class="hook">Khi nào tôi nên dùng hook? Nếu bạn viết một function component và nhận ra bạn cần thêm một số state vào chúng, trước đây bạn cần phải chuyển nó thành một class. Bây giờ bạn có thể sử dụng hook bên trong function component đã sẵn có.</p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+            <h2>Cách sử dụng useState</h2>
+            <ul>
+              <li>
+                <p class="state">Cú pháp : const [state, setState] = useState(initialStateValue)</p>
+              </li>
+              <li>
+                <p class="state">state: định nghĩa tên của state nó có thể là đơn giá trị hoặc object,.. (là tham số của useState)</p>
+              </li>
+              <li>
+                <p class="state">setState: định nghĩa tên function dùng cho việc update state (là tham số của useState)</p>
+              </li>
+              <li>
+                <p class="state">initialStateValue: là giá trị ban đầu của state.</p>
+              </li>
+              <li>
+                <p class="state">
+                  <h3>Ví dụ</h3>
+                  <img src="/Ảnh chụp màn hình 2022-11-04 091215.png" alt="">
+                </p>
+              </li>
+              <li>
+                <p class="state">
+                  <h3>Cách khai báo 1 biến state</h3>
+                  <p>Bên trong một function component, chúng ta không có this, cho nên chúng ta không thể cài đặt hoặc đọc this.state. Thay vào đó, chúng ta gọi useState Hook trực tiếp bên trong component:</p>
+                  <img src="/Ảnh.png" alt="">
+                </p>
+                </li>
+                <li>
+                  <p class="state">
+                    Ví dụ trên khai báo một biến state gọi là count và set nó về 0. React sẽ nhớ giá trị hiện tại của nó và cung cấp cho hàm của chúng ta giá trị mới nhất giữa những lần re-render. Nếu chúng ta muốn cập nhật giá trị count hiện tại, có thể gọi hàm setCount.
+                  </p>
+                </li>
+                <li>
+                  <p class="state">Hàm useState làm gì khi được gọi? Nó khai báo một “state variable” (biến state). Biến này gọi là count nhưng ta có thể gọi nó với bất kì tên nào, ví dụ gọi là banana. Đây là cách để “lưu giữ” các giá trị giữa các lần gọi hàm — useState là một cách mới để sử dụng như là cách this.state được dùng trong class. Thông thường, các biến này “biến mất” khi hàm kết thúc nhưng các biến state này được React giữ lại.</p>
+                </li>
+                <li>
+                  <p class="state">Hàm useState nhận tham số gì? Tham số duy nhất được truyền vào hook useState() là state ban đầu. Không giống như khai báo với Class, state không cần thiết phải là object mà có thể là số hoặc chuỗi. Với ví dụ trên, ta chỉ cần biết người dùng click bao nhiêu lần, vì vậy ta truyền vào giá trị khởi tạo là 0. (Nếu ta muốn lưu hai giá trị khác nhau, ta sẽ gọi useState() hai lần.)</p>
+                </li>
+                <li>
+                  <p class="state">useState trả về gì? Nó trả về một cặp giá trị dưới dạng mảng: state hiện tại và một hàm để update nó. Đây là lý do chúng ta viết const [count, setCount] = useState(). Cặp này tương tự như this.state.count và this.setState trong class, khác là ta dùng chúng theo cặp.</p>
+                </li>
+              </li>
+            </ul>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
